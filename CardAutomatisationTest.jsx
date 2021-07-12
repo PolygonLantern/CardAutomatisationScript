@@ -1,0 +1,1234 @@
+/*********************************************************/
+// Declare variables
+/*********************************************************/
+var cards = {
+    "Healing Touch":
+    {
+        "Name" : "Healing Touch",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Restore 3 health",
+        "Flavour_Text" : "Heal yourself!"
+    },
+       "Lend a hand":
+    {
+        "Name" : "Lend a hand",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Give a player up to 3 points of any type. If you do, you gain 2 points of your choice and 1 movement point.",
+        "Flavour_Text" : "Its good to be the nice guy."
+    } ,
+      "NoTitle":
+    {
+        "Name" : "NoTitle",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Hide a random monster in the next location card, lose 2 defence points",
+        "Flavour_Text" : "Give them a nice surprise!"
+    },
+    "Shitty pot of greed":
+    {
+        "Name" : "Shitty pot of greed",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Draw 2 cards, discard 1",
+        "Flavour_Text" : "null"
+    },
+    "Tiny dragon":
+    {
+        "Name" : "Tiny dragon",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Neutral",
+        "Text" : "null",
+        "Attack" : "4",
+        "Defence" : "3",
+        "Speed" : "2",
+        "Flavour_Text" : "Roar or whatever sound the dragons make :D"
+    },
+    "The wish well":
+    {
+        "Name" : "The wish well",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "When played every player draws a card and chooses one -- Gain 1 Attack point / Gain 1 Defence point",
+        "Flavour_Text" : "Make a wish!"
+    },
+    "The eye of doomed":
+    {
+        "Name" : "The eye of doomed",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Neutral",
+        "Text" : "When destroyed, choose a player and look at his/her top card of the deck, you can either leave it on the top or put it on the bottom of the deck",
+        "Attack" : "1",
+        "Defence" : "2",
+        "Speed" : "2",
+        "Flavour_Text" : "Eye got ya!"
+    },
+    "Ritual of Summoning":
+    {
+        "Name" : "Ritual of Summoning",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Summon a random wild Boss and attempt to control it. Wild roll. This card can be performed by multiple players, which would increase the chance of taking control over the monster. If it fails and the it’s been performed by more than one player, the monster gets +4 Attack and Defence points",
+        "Flavour_Text" : "Try your luck ;)"
+    },    
+    "Offerings to the gods":
+    {
+        "Name" : "Offerings to the gods",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Sacrifice a monster of yours, restore 5 health and gain 2 movement points",
+        "Flavour_Text" : "Tired of your soul? Give it away to the gods :D"
+    },
+    "NoTitle_1":
+    {
+        "Name" : "NoTitle_1",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Whenever your character is attacked, reduce the damage by 1d4. You lose 1 point equal to the score you rolled",
+        "Flavour_Text" : "Cheating much?"
+    },
+    "Switch":
+    {
+        "Name" : "Switch",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Swap the position of a monster of yours and you",
+        "Flavour_Text" : "Lets swap shoes and see how's it on the other side"
+    },
+    "Power up":
+    {
+        "Name" : "Power up",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Give a monster any amount of one type points for this turn",
+        "Flavour_Text" : "Do you even lift bruv?"
+    },    
+    "Stay hydrated":
+    {
+        "Name" : "Stay hydrated",
+        "Cost" : "1",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "After this card is played everyone must drink water, those who doesn’t lose half of their points :D",
+        "Flavour_Text" : "It's on the card, I didn't wrote the rules :D"
+    },    
+    "Lady Luck's die":
+    {
+        "Name" : "Lady Luck's die",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Gain a bonus die for your next roll",
+        "Flavour_Text" : "Lady Luck is smiling."
+    },
+    "Spiked chain":
+    {
+        "Name" : "Spiked chain",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Choose a player, that player can not move any of his figures for his/her next turn. You lose 3 life",
+        "Flavour_Text" : "I stopped them, but at what cost?"
+    },
+    "Blink":
+    {
+        "Name" : "Blink",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Move 2 squares forward, excludes diagonally movement",
+        "Flavour_Text" : "Blink and you'll miss it."
+    },
+    "Blind":
+    {
+        "Name" : "Blind",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Target player can not attack anything that is further than 1 square from the said player",
+        "Flavour_Text" : "Can't see them? Try smelling or hearing harder ;)"
+    },
+    "Iron Maiden":
+    {
+        "Name" : "Iron Maiden",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Destroy a minion of yours and gain 3 Special Ability points",
+        "Flavour_Text" : "Sacrefices must be made."
+    },
+    "Pond of wellness":
+    {
+        "Name" : "Pond of wellness",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Heal a chosen player and yourself for 3",
+        "Flavour_Text" : "Sharing is caring."
+    },
+    "All hands on deck":
+    {
+        "Name" : "All hands on deck",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Skip your next turn then for the upcoming turn you can play 2 creatures for 3 cost less",
+        "Flavour_Text" : "Preparation 100"
+    },
+    "Confusion":
+    {
+        "Name" : "Confusion",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Choose a player, for the next 3 turns, if that player attacks, he/she needs to roll 1d6. If the number is even, this player attacks successfully, else that player takes half of the damage",
+        "Flavour_Text" : "Some people call this luck, I call that skill ;)"
+    },
+    "Share the pain":
+    {
+        "Name" : "Share the pain",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Sacrifice your highest cost monster on the board, kill a monster by choice",
+        "Flavour_Text" : "null"
+    },
+    "The art of trading":
+    {
+        "Name" : "The art of trading",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Choose a player. Exchange a card from your hand for a card from the target player’s hand",
+        "Flavour_Text" : "I call that worth ;)"
+    },
+    "Water Bomb":
+    {
+        "Name" : "Water Bomb",
+        "Cost" : "1",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Deal 1 damage to all figures on the board",
+        "Flavour_Text" : "Time to get wet ;)"
+    },
+    "Last resort":
+    {
+        "Name" : "Last resort",
+        "Cost" : "X",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Transform all your points and health, but one, to Special Ability Points. Your special ability becomes deal damage equal to your Special Ability points",
+        "Flavour_Text" : "Full power!"
+    },   
+    "Corrupted Teleportation scroll":
+    {
+        "Name" : "Corrupted Teleportation scroll",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Change a target player’s next card to be a location card instead and move that player right next to your character.",
+        "Flavour_Text" : "I am still working on it, sorry!"
+    },    
+    "Cleansing rain":
+    {
+        "Name" : "Cleansing rain",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Target a polluted location, cleanse it and draw a reward card.",
+        "Flavour_Text" : "Let it rain, let it rain."
+    },
+    "Pollution spell":
+    {
+        "Name" : "Pollution spell",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Neutral",
+        "Text" : "Give the next location card poison. Poison deals 3 damage to each character that is placed on or adjacent to this location",
+        "Flavour_Text" : "We all do that, don't we?"
+    },    
+    "Safe return":
+    {
+        "Name" : "Safe return",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Return a monster of yours from the board to your hand",
+        "Flavour_Text" : "null"
+    },
+    "Negate!":
+    {
+        "Name" : "Negate!",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Negate all damage that would be dealt to a monster of yours, lose 3 health",
+        "Flavour_Text" : "Sike!"
+    },
+    "Micro drone":
+    {
+        "Name" : "Micro drone",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Choose a player, have a look at their hand and discard a card from their hand",
+        "Flavour_Text" : "I spy with my little eye.."
+    },
+    "Time Bomb":
+    {
+        "Name" : "Time Bomb",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Place a bomb in unoccupied space. Whenever triggered, this bomb deals 1d8 and half of the damage is dealt to all adjacent squares",
+        "Flavour_Text" : "Who doesn't love explosions?"
+    },
+    "Rewind":
+    {
+        "Name" : "Rewind",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Move back all players’ figures, except yours, back to their previous place",
+        "Flavour_Text" : "Still a better rewind than the 2018 YouTube rewind ;D"
+    },
+    "Android ":
+    {
+        "Name" : "Android",
+        "Cost" : "2",
+        "Type" : "Monster",
+        "Class" : "Chrono",
+        "Text" : "When that card is put on the field you can search your deck for Android 2.0 and to put it in your hand, then shuffle your deck.",
+        "Attack" : "2",
+        "Defence" : "2",
+        "Speed" : "2",
+        "Flavour_Text" : "This is my first programing project."
+    },
+    "Android 2.0":
+    {
+        "Name" : "Android 2.0",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Chrono",
+        "Text" : "If Android is on the board, this creature gains +2 Speed",
+        "Attack" : "4",
+        "Defence" : "4",
+        "Speed" : "3",
+        "Flavour_Text" : "I had some slight modifications, it ain't much but its honest work ;D"
+    },
+    "Future Precision":
+    {
+        "Name" : "Future Precision",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Search through your deck for a card with cost equal to your last played card, excluding this card and put it in your hand",
+        "Flavour_Text" : "I don't even know"
+    },
+    "Implosive granade":
+    {
+        "Name" : "Implosive granade",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Return all monsters to their owners hands",
+        "Flavour_Text" : "Seems less harmfull than his brother, high explosion granade!"
+    },
+    "The trickster":
+    {
+        "Name" : "The trickster",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Choose a player. On their next turn their rolls count as yours and on your next turn yours counts as theirs.",
+        "Flavour_Text" : "YEET."
+    },
+     "Safety Bubble":
+    {
+        "Name" : "Safety Bubble",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Give an ally monster a shield that would absorb the next attack",
+        "Flavour_Text" : "null"
+    },
+    "Futuristisc Soldier":
+    {
+        "Name" : "Futuristisc Soldier",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Chrono",
+        "Text" : "Whenever this creature attacks, deal damage to the square that is behind the attacked unit.",
+        "Attack" : "4",
+        "Defence" : "4",
+        "Speed" : "3",
+        "Flavour_Text" : "The future is here old man."
+    },
+    "X-ray Goggles":
+    {
+        "Name" : "X-ray Goggles",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "Choose a player. The targeted player must reveal their hand to you only.",
+        "Flavour_Text" : "Woah, that works?!"
+    },
+    "Teleportation":
+    {
+        "Name" : "Teleportation",
+        "Cost" : "7",
+        "Type" : "Spell",
+        "Class" : "Chrono",
+        "Text" : "You can move all the monsters you control with up to two squares forward in any direction.",
+        "Flavour_Text" : "null"
+    },
+    "Space pirate":
+    {
+        "Name" : "Space pirate",
+
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Chrono",
+        "Text" : "null",
+        "Attack" : "4",
+        "Defence" : "5",
+        "Speed" : "2",
+        "Flavour_Text" : "*Space noices*.. Arrgh!"
+    },
+    "NoTitle_2":
+    {
+        "Name" : "NoTitle_2",
+
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "Swap your monster’s attack and defence points",
+        "Flavour_Text" : "null"
+    },
+    "Majestic Knight":
+    {
+        "Name" : "Majestic Knight",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Neutral",
+        "Text" : "If that’s the only monster on the board, Majestic Knight gains +1 Attack",
+        "Attack" : "3",
+        "Defence" : "3",
+        "Speed" : "3",
+        "Flavour_Text" : "Look at my majestic horse! He is amazing :D"
+    },
+    "Haste":
+    {
+        "Name" : "Haste",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "Gain 3 movement points",
+        "Flavour_Text" : "Ruuun bish! Ruuuuun!"
+    },
+    "Priest":
+    {
+        "Name" : "Priest",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "Heal all of your characters for 1d6",
+        "Attack" : "1",
+        "Defence" : "3",
+        "Speed" : "2",
+        "Flavour_Text" : "May the holy texts be with you, always!"
+    },
+    "Forest Ranger":
+    {
+        "Name" : "Forest Ranger",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "null",
+        "Attack" : "4",
+        "Defence" : "2",
+        "Speed" : "4",
+        "Flavour_Text" : "In the jungle..."
+    },
+    "Blacksmith Dwarven":
+    {
+        "Name" : "Blacksmith Dwarven",
+        "Cost" : "6",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "For every 3 turns that this figure is in play, gain 4 Defence points",
+        "Attack" : "3",
+        "Defence" : "5",
+        "Speed" : "2",
+        "Flavour_Text" : "I might be small but I can handle some shit."
+    },
+    "Terrible Memory":
+    {
+        "Name" : "Terrible Memory",
+        "Cost" : "1",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "Discard a card, deal 2 damage to any target.",
+        "Flavour_Text" : "What?!"
+    },
+    "Handyman":
+    {
+        "Name" : "Handyman",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "Return one spell from the discard pile to your hand",
+        "Attack" : "4",
+        "Defence" : "3",
+        "Speed" : "2",
+        "Flavour_Text" : "null"
+    },
+    "Bob The Builder":
+    {
+        "Name" : "Bob The Builder",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "Each time this monster attacks successfully, move or build a wall adjacent to this monster’s position",
+        "Attack" : "3",
+        "Defence" : "2",
+        "Speed" : "3",
+        "Flavour_Text" : "null"
+    },
+    "Silent Assassin":
+    {
+        "Name" : "Silent Assassin",
+        "Cost" : "6",
+        "Type" : "Monster",
+        "Class" : "Human",
+        "Text" : "After this monster kills a monster, draw a card",
+        "Attack" : "4",
+        "Defence" : "2",
+        "Speed" : "5",
+        "Flavour_Text" : "Shhh!"
+    },
+    "The lady Luck":
+    {
+        "Name" : "The lady Luck",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Neutral",
+        "Text" : "While this monster is on the board, you may reroll your dice roll. This can occur only once per turn",
+        "Attack" : "1",
+        "Defence" : "3",
+        "Speed" : "2",
+        "Flavour_Text" : "Just a luck :/"
+    },
+    "Vengeance":
+    {
+        "Name" : "Vengeance",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "If a monster of yours has died your last turn, give your monsters on the board +2 attack and +2 speed for this turn",
+        "Flavour_Text" : "null"
+    },
+    "The Trickster":
+    {
+        "Name" : "The Trickster",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "Choose a player. On their next turn their rolls count as yours and on your next turn yours counts as theirs.",
+        "Flavour_Text" : "YEET."
+    },
+    "Cheap Shot":
+    {
+        "Name" : "Cheap Shot",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "If a creature of yours attacks a target from behind, the attack deals 2 more damage",
+        "Flavour_Text" : "Oopsiee."
+    },
+    "Bound of Friendship":
+    {
+        "Name" : "Bound of Friendship",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Human",
+        "Text" : "If you have 2 creatures on the board, that are up to 2 squares apart from each other you can move them together and combine their attack for your next attack with any of those creatures.",
+        "Flavour_Text" : "Friendship is badass!"
+    },
+    "Nature Bound":
+    {
+        "Name" : "Nature Bound",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "If the distance between you and your monster is equal or less than 2 squares, that monster gets +2 Attack and 1 Defence points",
+        "Flavour_Text" : "It's dangerous out there, take this stick with you!"
+    },
+    "Cute little Broot":
+    {
+        "Name" : "Cute little Broot",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "Whenever this monster takes damage, the owner can take the damage instead.",
+        "Attack" : "2",
+        "Defence" : "5",
+        "Speed" : "2",
+        "Flavour_Text" : "That's baby Groot's cousin."
+    },
+    "Wild Guess":
+    {
+        "Name" : "Wild Guess",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "If during your next turn you encounter a wild monster, that monster loses 3 AP and 1 DP",
+        "Flavour_Text" : "Let's take a guess."
+    },
+    "Root snare":
+    {
+        "Name" : "Root snare",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "Snare a player for 1 turn, gain 1 Attack point if you attack the snared person.",
+        "Flavour_Text" : "More like root square, haha.."
+    },
+    "Animated Earth Obelisk":
+    {
+        "Name" : "Animated Earth Obelisk",
+        "Cost" : "8",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "For each 2 monsters on the board, reduce the cost of that creature with 1",
+        "Attack" : "7",
+        "Defence" : "4",
+        "Speed" : "1",
+        "Flavour_Text" : "Yes, nature does have moving rocks, mind your own bussiness!"
+    },
+    "Treant":
+    {
+        "Name" : "Treant",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "null",
+        "Attack" : "4",
+        "Defence" : "6",
+        "Speed" : "1",
+        "Flavour_Text" : "It's just a tree, not Usain Bolt!"
+    },
+    "Colossus":
+    {
+        "Name" : "Colossus",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "For each animal monster on the board, gain 1 Attack",
+        "Attack" : "2",
+        "Defence" : "5",
+        "Speed" : "2",
+        "Flavour_Text" : "null"
+    },
+    "Stray Wolf":
+    {
+        "Name" : "Stray Wolf",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "null",
+        "Attack" : "3",
+        "Defence" : "2",
+        "Speed" : "3",
+        "Flavour_Text" : "Don't call the wolf, or it might bring ya a suprise"
+    },
+    "Bloodthirsty Hyena":
+    {
+        "Name" : "Bloodthirsty Hyena",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "After this monster successfully attacks an opponent, this monster gains 1 Defence",
+        "Attack" : "4",
+        "Defence" : "2",
+        "Speed" : "3",
+        "Flavour_Text" : "It really do be like this sometimes."
+    },
+    "Natural Assassination":
+    {
+        "Name" : "Natural Assassination",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "Pay 2 life and 2 Defence points, destroy a target monster",
+        "Flavour_Text" : "Return to nature."
+    },
+    "Nature's Embrace":
+    {
+        "Name" : "Nature's Embrace",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "Make small changes to the terrain. You can move up to 3 walls, anywhere on the map, or take them out",
+        "Flavour_Text" : "Nature gets lonely too sometimes."
+    },
+    "Feast":
+    {
+        "Name" : "Feast",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "Destroy a creature of yours, your character gains the destroyed monster’s attack and defence points",
+        "Flavour_Text" : "Nom nom nom!"
+    },
+    "For the great bad":
+    {
+        "Name" : "For the great bad",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Nature",
+        "Text" : "Choose a player. The targeted player can’t play any monsters on their next turn. You can’t play any monsters either.",
+        "Flavour_Text" : "I don't know. Why not?"
+    },
+    "Ferocious Hydra":
+    {
+        "Name" : "Ferocious Hydra",
+        "Cost" : "6",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "Deal damage to the front 2 adjacent squares.",
+        "Attack" : "5",
+        "Defence" : "4",
+        "Speed" : "2",
+        "Flavour_Text" : "Really, really angry hydra!"
+    },
+    "Ninja Squirrel":
+    {
+        "Name" : "Ninja Squirrel",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Nature",
+        "Text" : "null",
+        "Attack" : "2",
+        "Defence" : "1",
+        "Speed" : "5",
+        "Flavour_Text" : "Faster than most of your mosters will ever be!"
+    },
+    "Crazed Warlock":
+    {
+        "Name" : "Crazed Warlock",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Mage",
+        "Text" : "If you have more than one monster on the board, your Special Ability costs 5 less",
+        "Attack" : "1",
+        "Defence" : "3",
+        "Speed" : "2",
+        "Flavour_Text" : "Well.. he went too deep into magic."
+    },
+    "Ritual preparation":
+    {
+        "Name" : "Ritual preparation",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Your next summoning costs 2 SP less",
+        "Flavour_Text" : "Let's get ready for our next trick, shall we?"
+    },
+    "Ancient Ruins":
+    {
+        "Name" : "Ancient Ruins",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Roll 1d8, if you roll 4 or above, you get to draw an extra card next turn",
+        "Flavour_Text" : "null"
+    },
+    "Fire spell":
+    {
+        "Name" : "Fire spell",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Gain 3 Attack points and lose 2 Defence Points",
+        "Flavour_Text" : "null"
+    },
+    "Earth spell":
+    {
+        "Name" : "Earth spell",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Gain 3 Defence points and lose 2 Attack points",
+        "Flavour_Text" : "null"
+    },
+    "Wind spell":
+    {
+        "Name" : "Wind spell",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Gain 3 Movement points and lose 1 summon point",
+        "Flavour_Text" : "null"
+    },
+    "Water spell":
+    {
+        "Name" : "Water spell",
+        "Cost" : "2",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Gain 1 point of Attack, Defence and Movement",
+        "Flavour_Text" : "null"
+    },
+    "Undead Spellcaster":
+    {
+        "Name" : "Undead Spellcaster",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Mage",
+        "Text" : "When this creature is killed, the summoner can pay half the summoning cost and resummon this creature",
+        "Attack" : "1",
+        "Defence" : "2",
+        "Speed" : "3",
+        "Flavour_Text" : "text"
+    },
+    "Ring of fire":
+    {
+        "Name" : "Ring of fire",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Select an enemy, if that enemy moves deal 4 dmg",
+        "Flavour_Text" : "FAYAAAAAAAAAAAAAAAH!"
+    },
+    "Acolyte":
+    {
+        "Name" : "Acolyte",
+        "Cost" : "2",
+        "Type" : "Monster",
+        "Class" : "Mage",
+        "Text" : "null",
+        "Attack" : "2",
+        "Defence" : "2",
+        "Speed" : "2",
+        "Flavour_Text" : "He is just an ordinary acolyte."
+    },
+    "Teleportation scroll":
+    {
+        "Name" : "Teleportation scroll",
+        "Cost" : "1",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Draw a location card.",
+        "Flavour_Text" : "Where can we go?"
+    },
+    "The Right Witch":
+    {
+        "Name" : "The Right Witch",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Mage",
+        "Text" : "Reveal each player’s most right card in their hand each time this creature attacks.",
+        "Attack" : "3",
+        "Defence" : "4",
+        "Speed" : "2",
+        "Flavour_Text" : "She is always 'right'"
+    },
+    "For the Great Bad":
+    {
+        "Name" : "For the Great Bad",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Choose a player. The targeted player can’t play any monsters on their next turn. You can’t play any monsters either.",
+        "Flavour_Text" : "I don't know. Why not?"
+    },
+    "Great Wizard Staff":
+    {
+        "Name" : "Great Wizard Staff",
+        "Cost" : "4",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Gain 2 SP, and deal 2 damage to a monster",
+        "Flavour_Text" : "And you thought you can have only Great Axe or Sword.."
+    },    
+    "Transform!":
+    {
+        "Name" : "Transform!",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Mage",
+        "Text" : "Transform a target monster into a penguin token",
+        "Flavour_Text" : "Skiddadle Skadoodle your monster is now a poodle.. I mean a penguin"
+    },
+    "Proto Suit":
+    {
+        "Name" : "Proto Suit",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Mecha",
+        "Text" : "Give a monster of yours 4 Defence",
+        "Flavour_Text" : "Square up!"
+    },
+    "Mind Control Chip":
+    {
+        "Name" : "Mind Control Chip",
+        "Cost" : "5",
+        "Type" : "Spell",
+        "Class" : "Mecha",
+        "Text" : "control of a monster for 2 turns, the monster’s owner gets 2 movement points",
+        "Flavour_Text" : "My Name is Doof and You'll Do What I Say.. WOO WOO!"
+    },
+    "Mecha Roomba":
+    {
+        "Name" : "Mecha Roomba",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "You can pay 2 health to give that monster 2 Attack",
+        "Attack" : "5",
+        "Defence" : "3",
+        "Speed" : "3",
+        "Flavour_Text" : "As once one wise guy said:'The deadliest Roomba commences'"
+    },
+    "Spy camera":
+    {
+        "Name" : "Spy camera",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Mecha",
+        "Text" : "Choose a player, have a look at their hand and discard a card from their hand",
+        "Flavour_Text" : "Sneak peek."
+    },
+    "Robo Spider":
+    {
+        "Name" : "Robo Spider",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "null",
+        "Attack" : "2",
+        "Defence" : "2",
+        "Speed" : "4",
+        "Flavour_Text" : "It's not an ordinary spider, so be careful. That shit is expensive"
+    },
+    "Tiny Robot":
+    {
+        "Name" : "Tiny Robot",
+        "Cost" : "2",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "Can keep buffs for 3 turns, after the buff was played",
+        "Attack" : "2",
+        "Defence" : "2",
+        "Speed" : "2",
+        "Flavour_Text" : "He may be tiny but he can be a painfull thing to deal with ;)"
+    },
+    "SB-01":
+    {
+        "Name" : "SB-01",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "When that creature dies, deal damage equal to its attack to all adjacent squares",
+        "Attack" : "2",
+        "Defence" : "1",
+        "Speed" : "4",
+        "Flavour_Text" : "SB stands for Speed Bot"
+    },        
+    "Cruiser":
+    {
+        "Name" : "Cruiser",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "At the end of turn summon a 1/1 with 3 speed",
+        "Attack" : "1",
+        "Defence" : "5",
+        "Speed" : "2",
+        "Flavour_Text" : "Around the world.. Aroound the wooorld.."
+    },
+    "Right wing":
+    {
+        "Name" : "Right wing",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "If you have Left Wing and Mecha Cocoon on the board, transform into Mecha Butterfly",
+        "Attack" : "1",
+        "Defence" : "3",
+        "Speed" : "1",
+        "Flavour_Text" : "This alone can be crap but combined with a few more expensive parts, and you can get this game's Exodia :DD"
+    },
+    "Left wing":
+    {
+        "Name" : "Left wing",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "If you have Mecha Cocoon and Right Wing on the board, transform into Mecha Butterfly",
+        "Attack" : "1",
+        "Defence" : "3",
+        "Speed" : "1",
+        "Flavour_Text" : "This alone can be crap but combined with a few more expensive parts, and you can get this game's Exodia :DD"
+    },
+    "Mecha cocoon":
+    {
+        "Name" : "Mecha cocoon",
+        "Cost" : "3",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "If you have Left Wing and Right Wing on the board, transform into Mecha Butterfly",
+        "Attack" : "0",
+        "Defence" : "5",
+        "Speed" : "0",
+        "Flavour_Text" : "This alone can be crap but combined with a few more expensive parts, and you can get this game's Exodia :DD"
+    },
+    "Thrash":
+    {
+        "Name" : "Thrash",
+        "Cost" : "3",
+        "Type" : "Spell",
+        "Class" : "Mecha",
+        "Text" : "Destroy a creature of yours, your character gains the destroyed monster’s attack and defence points",
+        "Flavour_Text" : "Know your fucking place.. thrash :D"
+    },
+    "Wonky Bomb":
+    {
+        "Name" : "Wonky Bomb",
+        "Cost" : "5",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "When this creature attacks, deal the attack damage to all adjacent characters.",
+        "Attack" : "3",
+        "Defence" : "3",
+        "Speed" : "3",
+        "Flavour_Text" : "Well.. Everything should be wired up correctly.. This time.. I hope.."
+    },
+    "DR-07":
+    {
+        "Name" : "DR-07",
+        "Cost" : "4",
+        "Type" : "Monster",
+        "Class" : "Mecha",
+        "Text" : "null",
+        "Attack" : "2",
+        "Defence" : "7",
+        "Speed" : "2",
+        "Flavour_Text" : "DR, maybe means defence robot.. Idk. Bet you figured it out on your own ;)"
+    },
+    "Rusty Mecha Suit":
+    {
+        "Name" : "Rusty Mecha Suit",
+        "Cost" : "6",
+        "Type" : "Spell",
+        "Class" : "Mecha",
+        "Text" : "Give a monster +7 attack, for each passed turn gain -1 attack.",
+        "Flavour_Text" : "Well.. it can do the job, for now.."
+    },
+    "Mecha Butterfly":
+    {
+        "Name" : "Mecha Butterfly",
+        "Type" : "Monster Token",
+        "Class" : "Mecha",
+        "Text" : "null",
+        "Attack" : "9",
+        "Defence" : "9",
+        "Speed" : "6",
+        "Flavour_Text" : "YIKES!"
+    },    
+    "Penguin":
+    {
+        "Name" : "Penguin",
+        "Type" : "Monster Token",
+        "Class" : "Neutral",
+        "Text" : "null",
+        "Attack" : "2",
+        "Defence" : "2",
+        "Speed" : "2",
+        "Flavour_Text" : "Isn't it cuuutee!"
+    }
+};
+var document = app.activeDocument;
+
+var widthFlavourText = document.width - 123;
+var heightFlavourText = document.height - 470;
+var heightNameText = document.height/2 - 143;
+var widthNameText = document.width - 150;
+
+var tokenCards = [];
+var spellCards = [];
+var monsterCards =[];
+
+var whiteColour = new RGBColor();
+whiteColour.red = 255;
+whiteColour.green = 255;
+whiteColour.blue = 255;
+
+var textSize = 150;
+
+/*********************************************************/
+// Declare functions
+/*********************************************************/
+
+function cardAttributeLayer(fvText,costText,nameText,cdText)
+{
+    var document = app.activeDocument;
+
+    var CALayer = document.layers.add();
+    CALayer.name = "Card Attributes"
+
+    generateFlavourText(fvText);
+    generateCardText(cdText);
+    generateCostTextLeft(costText);
+    generateCostTextRight(costText);
+    generateCardNameText(nameText);
+
+    //exportCard("~/Desktop/boardgame prototypr/cards/testSCript", nameText);
+
+    //CALayer.remove();
+}
+
+
+function generateFlavourText(text)
+{
+    var rectRef = document.pathItems.rectangle(heightFlavourText, (widthFlavourText *-1)+30, 155, 20);        
+
+    var textLayer = document.textFrames.areaText(rectRef);
+    textLayer.name = "Flavour text/Monster Stats";
+    textLayer.contents = text;
+    textLayer.position = [widthFlavourText -45, heightFlavourText];
+    var textRange = textLayer.textRange;
+    textRange.justification = Justification.CENTER;
+    textRange.characterAttributes.fillColor = whiteColour;
+    textRange.characterAttributes.textFont.name = "MS-PGothic";
+    document.pageItems.getByName("Flavour text/Monster Stats").textRange.characterAttributes.size = 8;
+
+    
+}
+
+function generateCardNameText(text)
+{
+    var rectRef = document.pathItems.rectangle(heightNameText, (widthFlavourText *-1)+30, 120, 30);        
+
+    var textLayer = document.textFrames.areaText(rectRef);
+    textLayer.name = "Card Name";
+    textLayer.contents = text;
+    textLayer.position = [widthNameText, heightNameText];
+    var textRange = textLayer.textRange;
+    textRange.justification = Justification.CENTER;
+    textRange.characterAttributes.fillColor = whiteColour;
+    textRange.characterAttributes.textFont.name = "MS-PGothic";
+
+
+}
+function generateCardText(text)
+{
+
+    if(text.length >= textSize)
+    {
+        var rectRef = document.pathItems.rectangle(document.height/2 - 270, (widthFlavourText *-1)+70, 150, 70);        
+    }
+    else
+    {
+        var rectRef = document.pathItems.rectangle(document.height/2 - 295, (widthFlavourText *-1)+70, 150, 35);
+  
+    }
+    var textLayer = document.textFrames.areaText(rectRef);
+    textLayer.name = "Card Text";
+    textLayer.contents = text;
+    var textRange = textLayer.textRange;
+    textRange.justification = Justification.CENTER;
+    textRange.characterAttributes.fillColor = whiteColour;
+    textRange.characterAttributes.textFont.name = "MS-PGothic";
+    if(text.length >= textSize)
+    {
+        document.pageItems.getByName("Card Text").textRange.characterAttributes.size = 8;
+    }
+    else
+    {
+        document.pageItems.getByName("Card Text").textRange.characterAttributes.size = 10;
+ 
+    }
+    
+}
+function generateCostTextLeft(text)
+{
+    var textLayer = document.textFrames.add();
+    textLayer.name = "Cost Left";
+    textLayer.contents = text;
+    textLayer.position = [widthFlavourText - 50, document.height/2 - 130];
+    var textRange = textLayer.textRange;
+    textRange.characterAttributes.fillColor = whiteColour;
+
+
+}
+function generateCostTextRight(text)
+{
+    var textLayer = document.textFrames.add();
+    textLayer.name = "Cost Right";
+    textLayer.contents = text;
+    textLayer.position = [widthFlavourText + 110, document.height/2 - 130];
+    var textRange = textLayer.textRange;
+    textRange.characterAttributes.fillColor = whiteColour;
+
+}
+
+function exportCard(path, cardName)
+{
+    document.exportFile(File(path + cardName), ExportType.PNG24);
+}
+
+/*********************************************************/
+// code that is not functions 
+/*********************************************************/
+
+for (var key in cards)
+{
+    if(cards.hasOwnProperty(key) && cards[key].Type == "Spell")
+    {
+        spellCards.push(cards[key]);
+    }   
+    else if(cards.hasOwnProperty(key) && cards[key].Type == "Monster")
+    {
+        monsterCards.push(cards[key]);
+    }
+    else
+    {
+        tokenCards.push(cards[key]);
+    }
+};
+
+/*alert(tokenCards[0].Name);
+alert(monsterCards[0].Name);
+alert(spellCards[0].Name);
+*/
+
+
+/*********************************************************/
+// Execute functions 
+/*********************************************************/
+alert(monsterCards.length);
+/*
+for (var i=0; i < monsterCards.length ; i++) {
+    cardAttributeLayer(monsterCards[i].Flavour_Text,monsterCards[i].Cost,monsterCards[i].Name,monsterCards[i].Text);
+};*/
+
+cardAttributeLayer(monsterCards[0].Flavour_Text,monsterCards[0].Cost,monsterCards[0].Name,monsterCards[0].Text);
+
+//document.exportFile(File("~/Desktop/boardgame prototypr/cards/testSCript" + spellCards[5].Name), ExportType.PNG24);
+
+
