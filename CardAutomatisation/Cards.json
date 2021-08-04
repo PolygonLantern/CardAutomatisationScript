@@ -1,7 +1,4 @@
-/*********************************************************/
-// Declare variables
-/*********************************************************/
-var cards = {
+{
     "Healing Touch":
     {
         "Name" : "Healing Touch",
@@ -1043,6 +1040,7 @@ var cards = {
     {
         "Name" : "Mecha Butterfly",
         "Type" : "Monster Token",
+        "Cost" : "0",
         "Class" : "Mecha",
         "Text" : "null",
         "Attack" : "9",
@@ -1054,6 +1052,7 @@ var cards = {
     {
         "Name" : "Penguin",
         "Type" : "Monster Token",
+        "Cost" : "0",
         "Class" : "Neutral",
         "Text" : "null",
         "Attack" : "2",
@@ -1061,174 +1060,4 @@ var cards = {
         "Speed" : "2",
         "Flavour_Text" : "Isn't it cuuutee!"
     }
-};
-var document = app.activeDocument;
-
-var widthFlavourText = document.width - 123;
-var heightFlavourText = document.height - 470;
-var heightNameText = document.height/2 - 143;
-var widthNameText = document.width - 150;
-
-var tokenCards = [];
-var spellCards = [];
-var monsterCards =[];
-
-var whiteColour = new RGBColor();
-whiteColour.red = 255;
-whiteColour.green = 255;
-whiteColour.blue = 255;
-
-var textSize = 150;
-
-/*********************************************************/
-// Declare functions
-/*********************************************************/
-
-function cardAttributeLayer(fvText,costText,nameText,cdText)
-{
-    var document = app.activeDocument;
-
-    var CALayer = document.layers.add();
-    CALayer.name = "Card Attributes"
-
-    generateFlavourText(fvText);
-    generateCardText(cdText);
-    generateCostTextLeft(costText);
-    generateCostTextRight(costText);
-    generateCardNameText(nameText);
-
-    //exportCard("~/Desktop/boardgame prototypr/cards/testSCript", nameText);
-
-    //CALayer.remove();
 }
-
-
-function generateFlavourText(text)
-{
-    var rectRef = document.pathItems.rectangle(heightFlavourText, (widthFlavourText *-1)+30, 155, 20);        
-
-    var textLayer = document.textFrames.areaText(rectRef);
-    textLayer.name = "Flavour text/Monster Stats";
-    textLayer.contents = text;
-    textLayer.position = [widthFlavourText -45, heightFlavourText];
-    var textRange = textLayer.textRange;
-    textRange.justification = Justification.CENTER;
-    textRange.characterAttributes.fillColor = whiteColour;
-    textRange.characterAttributes.textFont.name = "MS-PGothic";
-    document.pageItems.getByName("Flavour text/Monster Stats").textRange.characterAttributes.size = 8;
-
-    
-}
-
-function generateCardNameText(text)
-{
-    var rectRef = document.pathItems.rectangle(heightNameText, (widthFlavourText *-1)+30, 120, 30);        
-
-    var textLayer = document.textFrames.areaText(rectRef);
-    textLayer.name = "Card Name";
-    textLayer.contents = text;
-    textLayer.position = [widthNameText, heightNameText];
-    var textRange = textLayer.textRange;
-    textRange.justification = Justification.CENTER;
-    textRange.characterAttributes.fillColor = whiteColour;
-    textRange.characterAttributes.textFont.name = "MS-PGothic";
-
-
-}
-function generateCardText(text)
-{
-
-    if(text.length >= textSize)
-    {
-        var rectRef = document.pathItems.rectangle(document.height/2 - 270, (widthFlavourText *-1)+70, 150, 70);        
-    }
-    else
-    {
-        var rectRef = document.pathItems.rectangle(document.height/2 - 295, (widthFlavourText *-1)+70, 150, 35);
-  
-    }
-    var textLayer = document.textFrames.areaText(rectRef);
-    textLayer.name = "Card Text";
-    textLayer.contents = text;
-    var textRange = textLayer.textRange;
-    textRange.justification = Justification.CENTER;
-    textRange.characterAttributes.fillColor = whiteColour;
-    textRange.characterAttributes.textFont.name = "MS-PGothic";
-    if(text.length >= textSize)
-    {
-        document.pageItems.getByName("Card Text").textRange.characterAttributes.size = 8;
-    }
-    else
-    {
-        document.pageItems.getByName("Card Text").textRange.characterAttributes.size = 10;
- 
-    }
-    
-}
-function generateCostTextLeft(text)
-{
-    var textLayer = document.textFrames.add();
-    textLayer.name = "Cost Left";
-    textLayer.contents = text;
-    textLayer.position = [widthFlavourText - 50, document.height/2 - 130];
-    var textRange = textLayer.textRange;
-    textRange.characterAttributes.fillColor = whiteColour;
-
-
-}
-function generateCostTextRight(text)
-{
-    var textLayer = document.textFrames.add();
-    textLayer.name = "Cost Right";
-    textLayer.contents = text;
-    textLayer.position = [widthFlavourText + 110, document.height/2 - 130];
-    var textRange = textLayer.textRange;
-    textRange.characterAttributes.fillColor = whiteColour;
-
-}
-
-function exportCard(path, cardName)
-{
-    document.exportFile(File(path + cardName), ExportType.PNG24);
-}
-
-/*********************************************************/
-// code that is not functions 
-/*********************************************************/
-
-for (var key in cards)
-{
-    if(cards.hasOwnProperty(key) && cards[key].Type == "Spell")
-    {
-        spellCards.push(cards[key]);
-    }   
-    else if(cards.hasOwnProperty(key) && cards[key].Type == "Monster")
-    {
-        monsterCards.push(cards[key]);
-    }
-    else
-    {
-        tokenCards.push(cards[key]);
-    }
-};
-
-/*alert(tokenCards[0].Name);
-alert(monsterCards[0].Name);
-alert(spellCards[0].Name);
-*/
-
-
-/*********************************************************/
-// Execute functions 
-/*********************************************************/
-alert(monsterCards.length);
-/*
-for (var i=0; i < monsterCards.length ; i++) {
-    cardAttributeLayer(monsterCards[i].Flavour_Text,monsterCards[i].Cost,monsterCards[i].Name,monsterCards[i].Text);
-};*/
-
-cardAttributeLayer(monsterCards[0].Flavour_Text,monsterCards[0].Cost,monsterCards[0].Name,monsterCards[0].Text);
-
-//document.exportFile(File("~/Desktop/boardgame prototypr/cards/testSCript" + spellCards[5].Name), ExportType.PNG24);
-
-
